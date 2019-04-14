@@ -30,7 +30,21 @@
  *
  */
 function getFizzBuzz(num) {
-    throw new Error('Not implemented');
+    if(num%3==0 && num%5==0){
+        return "FizzBuzz";
+
+    }
+    if(num%3==0){
+        return "Fizz";
+
+    }
+    if(num%5==0){
+        return "Buzz";
+
+    }
+    else{
+        return num;
+    }
 }
 
 
@@ -46,7 +60,11 @@ function getFizzBuzz(num) {
  *   10 => 3628800
  */
 function getFactorial(n) {
-    throw new Error('Not implemented');
+    var factorial = 1
+    for(var i = 1; i <= n; i++){
+        factorial = factorial * i;
+    }
+    return factorial;
 }
 
 
@@ -63,7 +81,11 @@ function getFactorial(n) {
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
 function getSumBetweenNumbers(n1, n2) {
-    throw new Error('Not implemented');
+    var sum = 0;
+    for (n1; n1<=n2; n1++){
+        sum = sum+n1;
+    }
+    return sum;
 }
 
 
@@ -82,8 +104,12 @@ function getSumBetweenNumbers(n1, n2) {
  *   10,10,10 =>  true
  */
 function isTriangle(a,b,c) {
-    throw new Error('Not implemented');
-}
+    if(a >= b+c || b >= a+c || c >= b+a){
+        return false;
+    }
+    else{
+    return true;
+}}
 
 
 /**
@@ -209,7 +235,10 @@ function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
  * 'noon' => 'noon'
  */
 function reverseString(str) {
-    throw new Error('Not implemented');
+    var arr = str.split("");
+    arr = arr.reverse();
+    str = arr.join('');
+    return str;
 }
 
 
@@ -226,7 +255,11 @@ function reverseString(str) {
  *   34143 => 34143
  */
 function reverseInteger(num) {
-    throw new Error('Not implemented');
+    var str = num.toString();
+    var arr = str.split("");
+    arr = arr.reverse();
+    str = arr.join('');
+    return str;
 }
 
 
@@ -270,7 +303,15 @@ function isCreditCardNumber(ccn) {
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
 function getDigitalRoot(num) {
-    throw new Error('Not implemented');
+    var str = num.toString();
+    var arr = str.split("");
+    var sum = 0;
+    for(var i = 0; i<arr.length; i++){
+        sum = sum + +arr[i];
+    }
+    var tens = Math.floor(sum/10);
+    var ostatok = sum%10;
+    return tens + ostatok; 
 }
 
 
